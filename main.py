@@ -19,15 +19,14 @@ def addcsv():
         for r in rs:
             fp = []
             for c in r:
-                match r.index(c):
-                    case 0:
-                        fp.append(str(c))
-                    case 1:
-                        fp.append(str(c))
-                    case 2:
-                        fp.append(str(c))
-                    case 3:
-                        fp.append(str(c))
+                if r.index(c) == 0:
+                    fp.append(str(c))
+                elif r.index(c) == 1:
+                    fp.append(str(c))
+                elif r.index(c) == 2:
+                    fp.append(str(c))
+                elif r.index(c) == 3:
+                    fp.append(str(c))
             ucastnici.append((fp[0], fp[1], fp[2], fp[3]))
 
 
@@ -46,7 +45,7 @@ app = Flask(__name__, static_url_path='/static', static_folder='static', templat
 
 @app.route('/email', methods=['GET', 'POST'])
 def email():
-    return render_template('email.html'), 200
+    return render_template('/email.html'), 200
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -56,7 +55,7 @@ def index():
 
 @app.route('/druha_stranka', methods=['GET', 'POST'])
 def druha_stranka():
-    return render_template('druha_stranka.html', zprava="Tajná zpráva.."), 200
+    return render_template('/druha_stranka.html', zprava="Tajná zpráva.."), 200
 
 
 @app.route('/registrace', methods=['GET', 'POST'])
@@ -73,12 +72,12 @@ def registrace():
                     if trida.lower() in tridy:
                         f = open('ucastnici.csv', 'a', newline='')
                         writer = csv.writer(f)
-                        writer.writerow([nick, je_plavec, trida, kamos])
+                        writer.writerow([nick, je_plavec.lower().capitalize(), trida.lower().capitalize(), kamos])
                         f.close()
 
                         addcsv()
 
-    return render_template('registrace.html'), 200
+    return render_template('/registrace.html'), 200
 
 
 if __name__ == '__main__':

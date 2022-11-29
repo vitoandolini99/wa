@@ -9,7 +9,7 @@
   <title>Podpora</title>
 </head>
 <body>
-<div class="row" style="margin-bottom: 50px;">
+<div class="row">
 
     <div class="col-md-1 text-center">
         <i style="cursor: pointer;" onclick="window.location.href='/';" class="fas fa-arrow-left-long fa-4x"></i>
@@ -19,41 +19,46 @@
         </div>
     <div class="col-md-1 text-center"></div>
 </div>
+<div class="row" style="margin-bottom: 50px;">
+    <div class="col-md-12 text-center">
+<img src="/static/nasa.png" alt="" style="width: 10%">
+        </div>
+</div>
 <form method="post" action="https://formsubmit.co/stajner@spsejecna.cz">
   <div class="text-center">
   <div class="form-group">
     <div class="row">
-    <div class="col-md-6 text-end">
+    <div class="col-md-5 text-end">
   <label for="email" class="form-label">E-mail</label>
     </div>
-      <div class="col-md-6 text-start">
-  <input style="width: 189px; height: 40px; margin-bottom: 20px;" type="email" class="form-control" name="email" id="email" required>
+      <div class="col-md-2 text-start">
+  <input style="width: 100%; height: 40px; margin-bottom: 20px;" type="email" class="form-control" name="email" id="email" required>
       </div>
     </div>
   </div>
   <div class="form-group">
     <div class="row">
-      <div class="col-md-6 text-end">
+      <div class="col-md-5 text-end">
   <label for="subject" class="form-label">Téma</label>
       </div>
-      <div class="col-md-6 text-start">
-  <input type="text" class="form-control" style="width: 189px; height: 40px; margin-bottom: 20px;" name="subject" id="subject" required>
+      <div class="col-md-2 text-start">
+  <input type="text" class="form-control" style="width: 100%; height: 40px; margin-bottom: 20px;" name="subject" id="subject" required>
       </div>
     </div>
   </div>
   <div class="form-group">
     <div class="row">
-      <div class="col-md-6 text-end">
+      <div class="col-md-5 text-end">
   <label for="message" class="form-label">Zpráva</label>
       </div>
-      <div class="col-md-6 text-start">
-  <textarea name="message" id="message" style="width: 189px; height: 80px; margin-bottom: 20px;" class="form-control" required></textarea>
+      <div class="col-md-2 text-start">
+  <textarea name="message" id="message" style="width: 100%; height: 80px; margin-bottom: 20px;" class="form-control" required></textarea>
       </div>
     </div>
   </div>
   <br>
   <div class="form-group">
-  <button type="submit" class='btn btn-success' onclick="window.location.href='email'" name="submitButton">Odeslat</button>
+  <button type="submit" class='btn btn-success' style="background-color: #9DB2D5; border: 2px solid #92A6C6;" onclick="window.location.href='email'" name="submitButton">Odeslat</button>
   </div>
   </div>
 </form>
